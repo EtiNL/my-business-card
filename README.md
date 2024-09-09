@@ -20,7 +20,7 @@ It was a lie. I opened a new LaTeX document and typed this thing, thanks to Stac
 ## Requirements
 
 - XeLaTeX
-- Gill Sans, but you can change the font
+- Futura Lt BT, but you can change the font
 
 ## Build
 
