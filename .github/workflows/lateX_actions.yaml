@@ -15,7 +15,7 @@ jobs:
         uses: xu-cheng/latex-action@v3
         with:
           root_file: card.tex
-          extra_fonts: ./font_futura/futura light bt.ttf
+          extra_fonts: ./font_futura/futura_light_bt.ttf
           latexmk_use_xelatex: true
       - name: create release
         uses: softprops/action-gh-release@v1
