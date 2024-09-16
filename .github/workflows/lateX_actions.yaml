@@ -1,0 +1,25 @@
+name: Build LaTeX document and creates a release
+on: 
+  push:
+    tags:
+      - "v*" # triggers the workflow only when v in the version
+permissions:
+  contents: write # allows the workflow to create a release
+jobs:
+  build_latex:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Set up Git repository
+        uses: actions/checkout@v4
+      - name: Compile LaTeX document
+        uses: xu-cheng/latex-action@v3
+        with:
+          root_file: card.tex
+          extra_fonts: ./font_futura/futura light bt.ttf
+          latexmk_use_xelatex: true
+      - name: create release
+        uses: softprops/action-gh-release@v1
+        with: 
+          files: card.pdf
+        env:
+          GITHUB_TOKEN: $ {{ secrets.GITHUB_TOKEN }}
